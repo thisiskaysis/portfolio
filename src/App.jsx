@@ -62,7 +62,7 @@ function App() {
             "Accessibility",
           ]}
           liveUrl="#"
-          githubUrl="#"
+          githubUrl="https://github.com/SheCodesAus/Owl-gorithms-frontend"
           image="/bucketlist-preview.png"
           imageAlt="Collaborative Bucket List App preview"
           accent="violet"
@@ -88,8 +88,8 @@ function App() {
             "PostgreSQL",
             "Full Stack",
           ]}
-          liveUrl="#"
-          githubUrl="#"
+          liveUrl="https://dreamjar.netlify.app/"
+          githubUrl="https://github.com/thisiskaysis/dreamjar-frontend"
           image="/crowdfunding-preview.gif"
           imageAlt="Crowdfunding platform preview"
           reverse

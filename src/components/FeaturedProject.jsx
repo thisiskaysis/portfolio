@@ -15,6 +15,31 @@ function FeaturedProject({
   reverse = false,
   accent = "violet",
 }) {
+  function handleTilt(event) {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -5;
+    const rotateY = ((x - centerX) / centerX) * 5;
+
+    card.style.setProperty("--tilt-x", `${rotateX}deg`);
+    card.style.setProperty("--tilt-y", `${rotateY}deg`);
+    card.style.setProperty("--lift-y", "-6px");
+  }
+
+  function resetTilt(event) {
+    const card = event.currentTarget;
+    card.style.setProperty("--tilt-x", "0deg");
+    card.style.setProperty("--tilt-y", "0deg");
+    card.style.setProperty("--lift-y", "0px");
+  }
+
   return (
     <section className={`featured-project ${reverse ? "reverse" : ""}`}>
       <div className="container">
@@ -28,7 +53,12 @@ function FeaturedProject({
           <div className="featured-grid">
             <div className="featured-visual-wrap">
               <div className="featured-visual-glow" />
-              <div className="featured-floating-card glass-card">
+
+              <div
+                className="featured-floating-card glass-card tilt-card-featured"
+                onMouseMove={handleTilt}
+                onMouseLeave={resetTilt}
+              >
                 {image ? (
                   <img
                     src={image}
@@ -119,7 +149,7 @@ function FeaturedProject({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  GitHub <Github size={16} style={{ marginLeft: 8 }} />
+                  View Code <Github size={16} style={{ marginLeft: 8 }} />
                 </a>
               </div>
             </div>

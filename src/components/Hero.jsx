@@ -1,9 +1,48 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, AudioLines, Code2, Layers3, Sparkles } from "lucide-react";
 
 function Hero() {
+  const [spotlight, setSpotlight] = useState({ x: 50, y: 50 });
+
+  function handleMouseMove(event) {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+    setSpotlight({ x, y });
+  }
+
+  function handleTilt(event) {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
+
+    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+  }
+
+  function resetTilt(event) {
+    event.currentTarget.style.transform =
+      "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)";
+  }
+
   return (
-    <section id="home" className="hero-section">
+    <section
+      id="home"
+      className="hero-section"
+      onMouseMove={handleMouseMove}
+      style={{
+        "--spotlight-x": `${spotlight.x}%`,
+        "--spotlight-y": `${spotlight.y}%`,
+      }}
+    >
       <motion.div
         className="orb orb-1"
         animate={{ y: [0, -18, 0] }}
@@ -19,6 +58,8 @@ function Hero() {
         animate={{ y: [0, -16, 0] }}
         transition={{ duration: 9, repeat: Infinity, delay: 2 }}
       />
+
+      <div className="hero-spotlight" />
 
       <div className="container">
         <div className="hero-inner">
@@ -63,7 +104,11 @@ function Hero() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.16 }}
           >
-            <article className="glass-card hero-mini-card">
+            <article
+              className="glass-card hero-mini-card tilt-card"
+              onMouseMove={handleTilt}
+              onMouseLeave={resetTilt}
+            >
               <div className="hero-mini-icon">
                 <Code2 size={22} />
               </div>
@@ -74,7 +119,11 @@ function Hero() {
               </p>
             </article>
 
-            <article className="glass-card hero-mini-card">
+            <article
+              className="glass-card hero-mini-card tilt-card"
+              onMouseMove={handleTilt}
+              onMouseLeave={resetTilt}
+            >
               <div className="hero-mini-icon">
                 <Layers3 size={22} />
               </div>
@@ -85,7 +134,11 @@ function Hero() {
               </p>
             </article>
 
-            <article className="glass-card hero-mini-card">
+            <article
+              className="glass-card hero-mini-card tilt-card"
+              onMouseMove={handleTilt}
+              onMouseLeave={resetTilt}
+            >
               <div className="hero-mini-icon">
                 <AudioLines size={22} />
               </div>

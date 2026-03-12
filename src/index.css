@@ -311,6 +311,65 @@ section {
   color: var(--muted);
 }
 
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle 320px at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+      rgba(255, 255, 255, 0.08),
+      rgba(169, 112, 255, 0.08) 20%,
+      rgba(255, 119, 200, 0.05) 38%,
+      transparent 65%
+    );
+  transition: background 0.12s ease;
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.tilt-card:hover {
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.4),
+    0 0 24px rgba(169, 112, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.06)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-spotlight {
+    display: none;
+  }
+
+  .tilt-card {
+    transform: none !important;
+    transition: none;
+  }
+}
+
 .orb {
   position: absolute;
   border-radius: 999px;
@@ -772,14 +831,66 @@ section {
 }
 
 .featured-floating-card {
+  --base-rotate: -2deg;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --lift-y: 0px;
+
   position: relative;
   padding: 16px;
   border-radius: 30px;
-  transform: rotate(-2deg);
+  transform:
+    perspective(1200px)
+    rotate(var(--base-rotate))
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y))
+    translateY(var(--lift-y));
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    filter 0.25s ease;
 }
 
 .featured-project.reverse .featured-floating-card {
-  transform: rotate(2deg);
+  --base-rotate: 2deg;
+}
+
+.tilt-card-featured:hover {
+  filter: brightness(1.03);
+}
+
+.featured-violet .tilt-card-featured:hover {
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.42),
+    0 0 32px rgba(169, 112, 255, 0.16),
+    0 0 52px rgba(255, 119, 200, 0.1);
+}
+
+.featured-icy .tilt-card-featured:hover {
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.42),
+    0 0 32px rgba(125, 211, 252, 0.16),
+    0 0 52px rgba(216, 180, 254, 0.1);
+}
+
+@media (max-width: 919px) {
+  .featured-floating-card {
+    --base-rotate: 0deg;
+  }
+
+  .featured-project.reverse .featured-floating-card {
+    --base-rotate: 0deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-floating-card {
+    transform: none !important;
+    transition: none;
+  }
 }
 
 .featured-image {
