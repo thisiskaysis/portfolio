@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 import {
   FaReact,
   FaJs,
@@ -61,24 +61,21 @@ function TechStack() {
   return (
     <section id="tech-stack">
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 26 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6 }}
-        >
+        <Reveal>
           <span className="section-label">Tech Stack</span>
           <h2 className="section-title">The tools behind the vision.</h2>
           <p className="section-copy">
             A growing toolkit I use to build responsive, connected, polished,
             and user-focused web experiences.
           </p>
-        </motion.div>
+        </Reveal>
 
-        <div className="tech-stack-wrap">
-          <TechRow items={topRow} direction="left" speed="normal" />
-          <TechRow items={bottomRow} direction="right" speed="slow" />
-        </div>
+        <Reveal delay={0.12}>
+          <div className="tech-stack-wrap">
+            <TechRow items={topRow} direction="left" speed="normal" />
+            <TechRow items={bottomRow} direction="right" speed="slow" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

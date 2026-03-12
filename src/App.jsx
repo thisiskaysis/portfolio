@@ -2,9 +2,10 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
 import FeaturedProject from "./components/FeaturedProject";
-import Projects from "./components/Projects";
+import ExploringNext from "./components/ExploringNext";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Reveal from "./components/Reveal";
 
 function App() {
   return (
@@ -31,13 +32,17 @@ function App() {
 
         <section id="featured-projects" className="featured-projects-intro">
           <div className="container">
-            <span className="section-label">Featured Projects</span>
-            <h2 className="section-title">The builds I want you to remember.</h2>
-            <p className="section-copy">
-              Two very different full-stack projects that showcase how I think
-              about product design, structure, interaction, and real user
-              experience.
-            </p>
+            <Reveal>
+              <span className="section-label">Featured Projects</span>
+              <h2 className="section-title">
+                The builds I want you to remember.
+              </h2>
+              <p className="section-copy">
+                Two very different full-stack projects that showcase how I think
+                about product design, structure, interaction, and real user
+                experience.
+              </p>
+            </Reveal>
           </div>
         </section>
 
@@ -96,7 +101,7 @@ function App() {
           accent="icy"
         />
 
-        <Projects />
+        <ExploringNext />
         <Contact />
       </main>
 
