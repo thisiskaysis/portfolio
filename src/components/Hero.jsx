@@ -89,11 +89,11 @@ function Hero() {
 
             <p className="hero-copy">
               I’m Kaycee - an emerging full-stack developer drawn to the
-              intersection of creativity, structure, and user experience. I love
-              building products that feel polished, expressive, and genuinely
-              enjoyable to use. For me, development is about more than writing
-              code - it’s about shaping thoughtful digital experiences from idea
-              to implementation.
+              intersection of creativity, structure, and user experience.
+              <br></br> I love building products that feel polished, expressive,
+              and genuinely enjoyable to use. For me, development is about more
+              than writing code - it’s about shaping thoughtful digital
+              experiences from idea to implementation.
             </p>
 
             <div className="button-row">
@@ -122,7 +122,7 @@ function Hero() {
               </div>
               <h3 className="hero-mini-title">Full-stack thinking</h3>
               <p className="hero-mini-copy">
-                I enjoy building across the whole product, from the interface
+                I enjoy building across the whole product - from the interface
                 users see to the systems and logic underneath.
               </p>
             </article>

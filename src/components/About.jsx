@@ -15,8 +15,8 @@ function About() {
             taking an idea and shaping it into something real - something people
             can interact with, explore, and genuinely enjoy using. What excites
             me most about development is the combination of technical thinking
-            and human experience. I’m especially interested in building products
-            that feel polished, expressive, and intuitive from the first
+            and human experience. I love building products
+            that feel polished, expressive, and intuitive from the very first
             interaction.
           </p>
         </Reveal>
@@ -40,7 +40,7 @@ function About() {
               <p className="info-copy">
                 Outside of development, I volunteer on the live production desk
                 at my church, helping manage audio and technical elements for
-                weekly services. It’s a role that requires focus, timing,
+                weekly services.<br></br> It’s a role that requires focus, timing,
                 collaboration, and calm problem-solving - qualities that carry
                 naturally into the way I approach building software.
               </p>

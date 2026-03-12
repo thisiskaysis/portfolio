@@ -38,7 +38,7 @@ function App() {
         root: null,
         rootMargin: "-20% 0px -45% 0px",
         threshold: [0.2, 0.35, 0.5, 0.7],
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -72,7 +72,9 @@ function App() {
             </a>
             <a
               href="#featured-projects"
-              className={activeSection === "featured-projects" ? "is-active" : ""}
+              className={
+                activeSection === "featured-projects" ? "is-active" : ""
+              }
             >
               Projects
             </a>
@@ -100,7 +102,7 @@ function App() {
               </h2>
               <p className="section-copy">
                 Two very different full-stack projects that showcase how I think
-                about product design, structure, interaction, and real user
+                about product design, interaction, structure, and real user
                 experience.
               </p>
             </Reveal>
@@ -111,7 +113,7 @@ function App() {
           eyebrow="Featured Project 01"
           title="Collaborative Bucket List App"
           subtitle="A full-stack collaborative experience built around planning meaningful moments together."
-          description="This project was designed to bring people together around shared goals and experiences. It combines thoughtful interface design with more complex collaboration features, balancing polish, usability, permissions, and interaction across the full stack."
+          description="This project was designed to bring people together around shared goals and experiences. It combines thoughtful interface design with more complex collaboration features, balancing polish, usability, collaboration features, and permissions across the full stack."
           features={[
             "Collaborative public and private bucket lists",
             "Voting interactions with real-time visual feedback",
@@ -138,7 +140,7 @@ function App() {
           eyebrow="Featured Project 02"
           title="Crowdfunding Platform"
           subtitle="A structured web platform built to support campaigns, funding journeys, and real application logic."
-          description="This project highlights a different side of my development work — building a more system-driven product with stronger backend structure and practical application logic. It demonstrates my interest in creating products that are not only visually engaging, but also functional and grounded in real-world use."
+          description="This project highlights a different side of my development work - building a more system-driven product with stronger backend structure and practical application logic. It demonstrates my interest in creating products that are not only visually engaging, but also functional and grounded in real-world use."
           features={[
             "Campaign creation and contribution flows",
             "Clear separation of user-facing views and system logic",

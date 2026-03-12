@@ -15,9 +15,9 @@ function ExploringNext() {
           <span className="section-label">What I’m Exploring Next</span>
           <h2 className="section-title">Still building. Still evolving.</h2>
           <p className="section-copy">
-            I’m excited by the next layer of full-stack development — the kinds
+            I’m excited by the next layer of full-stack development - the kinds
             of features and systems that make products feel more connected,
-            responsive, and alive.
+            responsive, and dynamic.
           </p>
         </Reveal>
 
