@@ -35,16 +35,16 @@ function Hero() {
             <h1 className="hero-title">
               Building digital
               <br />
-              experiences with
+              experiences that feel
               <br />
-              edge, feeling, and intent.
+              alive.
             </h1>
 
             <p className="hero-copy">
-              I’m Kaycee — a developer who cares about creating products that
-              feel polished, intuitive, expressive, and genuinely enjoyable to
-              use. I love the moment where creativity meets structure and an
-              idea becomes something real.
+              I’m Kaycee — an emerging full-stack developer drawn to the
+              intersection of creativity, structure, and user experience. I love
+              building products that feel polished, expressive, and genuinely
+              enjoyable to use.
             </p>
 
             <div className="button-row">
