@@ -1,13 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Hero from "./components/Hero";
+import About from "./components/About";
+import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-export default function App() {
+function App() {
   return (
     <main>
-      <h1>Kaycee Lawrence</h1>
-      <p>Emerging full-stack developer</p>
+      <Hero />
+      <About />
+      <TechStack />
+      <Projects />
+      <Contact />
+      <Footer />
     </main>
   );
 }
+
+export default App;
