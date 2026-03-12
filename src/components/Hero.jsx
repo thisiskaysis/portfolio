@@ -1,67 +1,103 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, AudioLines, Code2, Layers3, Sparkles } from "lucide-react";
 
 function Hero() {
   return (
-    <section id="home">
-      <div
-        className="container"
-        style={{
-          display: "grid",
-          gap: "28px",
-          alignItems: "center",
-          minHeight: "100vh",
-        }}
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          style={{ maxWidth: "860px" }}
-        >
-          <div className="pill">
-            <Sparkles size={16} />
-            Emerging full-stack developer
-          </div>
+    <section id="home" className="hero-section">
+      <motion.div
+        className="orb orb-1"
+        animate={{ y: [0, -18, 0] }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div
+        className="orb orb-2"
+        animate={{ y: [0, -14, 0] }}
+        transition={{ duration: 7, repeat: Infinity, delay: 1 }}
+      />
+      <motion.div
+        className="orb orb-3"
+        animate={{ y: [0, -16, 0] }}
+        transition={{ duration: 9, repeat: Infinity, delay: 2 }}
+      />
 
-          <h1
-            style={{
-              margin: "24px 0 20px",
-              fontSize: "clamp(3rem, 7vw, 6.2rem)",
-              lineHeight: 0.95,
-              letterSpacing: "-0.05em",
-            }}
+      <div className="container">
+        <div className="hero-inner">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
           >
-            Not boring.
-            <br />
-            Not generic.
-            <br />
-            Just thoughtful, creative code.
-          </h1>
+            <div className="pill">
+              <Sparkles size={16} />
+              Emerging full-stack developer
+            </div>
 
-          <p
-            style={{
-              maxWidth: "720px",
-              margin: 0,
-              fontSize: "clamp(1.05rem, 2vw, 1.3rem)",
-              lineHeight: 1.8,
-              color: "var(--muted)",
-            }}
+            <h1 className="hero-title">
+              Building digital
+              <br />
+              experiences with
+              <br />
+              edge, feeling, and intent.
+            </h1>
+
+            <p className="hero-copy">
+              I’m Kaycee — a developer who cares about creating products that
+              feel polished, intuitive, expressive, and genuinely enjoyable to
+              use. I love the moment where creativity meets structure and an
+              idea becomes something real.
+            </p>
+
+            <div className="button-row">
+              <a className="button-primary" href="#projects">
+                View Projects <ArrowRight size={18} style={{ marginLeft: 8 }} />
+              </a>
+              <a className="button-secondary" href="#contact">
+                Contact Me
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hero-card-grid"
+            initial={{ opacity: 0, y: 36, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.16 }}
           >
-            I’m Kaycee — a developer who loves building digital experiences that
-            feel polished, intuitive, and alive. I care about the details,
-            the user, and the spark that makes a product actually memorable.
-          </p>
+            <article className="glass-card hero-mini-card">
+              <div className="hero-mini-icon">
+                <Code2 size={22} />
+              </div>
+              <h3 className="hero-mini-title">Full-stack thinking</h3>
+              <p className="hero-mini-copy">
+                I enjoy building across the whole product, from the interface
+                users see to the systems and logic underneath.
+              </p>
+            </article>
 
-          <div className="button-row">
-            <a className="button-primary" href="#projects">
-              View Projects <ArrowRight size={18} style={{ marginLeft: 8 }} />
-            </a>
-            <a className="button-secondary" href="#contact">
-              Contact Me
-            </a>
-          </div>
-        </motion.div>
+            <article className="glass-card hero-mini-card">
+              <div className="hero-mini-icon">
+                <Layers3 size={22} />
+              </div>
+              <h3 className="hero-mini-title">Polished UX focus</h3>
+              <p className="hero-mini-copy">
+                Accessibility, clarity, and visual flow matter deeply in the way
+                I design and build web experiences.
+              </p>
+            </article>
+
+            <article className="glass-card hero-mini-card">
+              <div className="hero-mini-icon">
+                <AudioLines size={22} />
+              </div>
+              <h3 className="hero-mini-title">Creative energy</h3>
+              <p className="hero-mini-copy">
+                Outside of coding, I volunteer on the live production desk at
+                church, blending technical focus, timing, and creativity each
+                week.
+              </p>
+            </article>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

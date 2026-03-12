@@ -7,14 +7,32 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <main>
-      <Hero />
-      <About />
-      <TechStack />
-      <Projects />
-      <Contact />
+    <>
+      <header className="site-header">
+        <div className="container nav-shell">
+          <a href="#home" className="brand-mark">
+            Kaycee Lawrence
+          </a>
+
+          <nav className="site-nav" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#tech-stack">Stack</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <Hero />
+        <About />
+        <TechStack />
+        <Projects />
+        <Contact />
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }
 
