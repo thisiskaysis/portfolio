@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const exploringItems = [
   "Real-time features in collaborative applications",
   "Notification systems and richer user feedback loops",
-  "More expressive and interactive front-end experiences",
+  "Third-party integrations and more interactive experiences",
   "Building scalable APIs and stronger backend architecture",
 ];
 
@@ -31,21 +31,6 @@ function ExploringNext() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.18}>
-          <p className="exploring-footer">
-            More projects and experiments live on{" "}
-            <a
-              href="https://github.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="exploring-link"
-            >
-              my GitHub
-            </a>
-            .
-          </p>
-        </Reveal>
       </div>
     </section>
   );

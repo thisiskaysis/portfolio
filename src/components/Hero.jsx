@@ -43,6 +43,12 @@ function Hero() {
         "--spotlight-y": `${spotlight.y}%`,
       }}
     >
+      <div className="hero-mesh" aria-hidden="true">
+  <span className="mesh-blob mesh-blob-1" />
+  <span className="mesh-blob mesh-blob-2" />
+  <span className="mesh-blob mesh-blob-3" />
+  <span className="mesh-blob mesh-blob-4" />
+</div>
       <motion.div
         className="orb orb-1"
         animate={{ y: [0, -18, 0] }}
@@ -76,9 +82,9 @@ function Hero() {
             <h1 className="hero-title">
               Building digital
               <br />
-              experiences that feel
+              experiences that
               <br />
-              alive.
+              feel alive.
             </h1>
 
             <p className="hero-copy">

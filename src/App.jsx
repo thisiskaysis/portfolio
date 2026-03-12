@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
@@ -7,20 +8,80 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 
+const sectionIds = [
+  "home",
+  "about",
+  "tech-stack",
+  "featured-projects",
+  "contact",
+];
+
 function App() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0].target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "-20% 0px -45% 0px",
+        threshold: [0.2, 0.35, 0.5, 0.7],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <header className="site-header">
         <div className="container nav-shell">
-          <a href="#home" className="brand-mark">
+          <a
+            href="#home"
+            className={`brand-mark ${activeSection === "home" ? "is-active" : ""}`}
+          >
             Kaycee Lawrence
           </a>
 
           <nav className="site-nav" aria-label="Primary">
-            <a href="#about">About</a>
-            <a href="#tech-stack">Stack</a>
-            <a href="#featured-projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a
+              href="#about"
+              className={activeSection === "about" ? "is-active" : ""}
+            >
+              About
+            </a>
+            <a
+              href="#tech-stack"
+              className={activeSection === "tech-stack" ? "is-active" : ""}
+            >
+              Stack
+            </a>
+            <a
+              href="#featured-projects"
+              className={activeSection === "featured-projects" ? "is-active" : ""}
+            >
+              Projects
+            </a>
+            <a
+              href="#contact"
+              className={activeSection === "contact" ? "is-active" : ""}
+            >
+              Contact
+            </a>
           </nav>
         </div>
       </header>

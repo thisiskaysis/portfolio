@@ -19,7 +19,7 @@ function About() {
 
         <div className="grid-2" style={{ marginTop: "32px" }}>
           <Reveal delay={0.08}>
-            <div className="glass-card info-card">
+            <div className="glass-card info-card info-card-violet">
               <h3 className="info-title">How I build</h3>
               <p className="info-copy">
                 I care about creating experiences that are clean, accessible,
@@ -31,7 +31,7 @@ function About() {
           </Reveal>
 
           <Reveal delay={0.16}>
-            <div className="glass-card info-card">
+            <div className="glass-card info-card info-card-icy">
               <h3 className="info-title">Beyond code</h3>
               <p className="info-copy">
                 Outside of development, I volunteer at my church running the
