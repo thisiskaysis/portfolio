@@ -44,11 +44,11 @@ function Hero() {
       }}
     >
       <div className="hero-mesh" aria-hidden="true">
-  <span className="mesh-blob mesh-blob-1" />
-  <span className="mesh-blob mesh-blob-2" />
-  <span className="mesh-blob mesh-blob-3" />
-  <span className="mesh-blob mesh-blob-4" />
-</div>
+        <span className="mesh-blob mesh-blob-1" />
+        <span className="mesh-blob mesh-blob-2" />
+        <span className="mesh-blob mesh-blob-3" />
+        <span className="mesh-blob mesh-blob-4" />
+      </div>
       <motion.div
         className="orb orb-1"
         animate={{ y: [0, -18, 0] }}
@@ -88,14 +88,16 @@ function Hero() {
             </h1>
 
             <p className="hero-copy">
-              I’m Kaycee — an emerging full-stack developer drawn to the
+              I’m Kaycee - an emerging full-stack developer drawn to the
               intersection of creativity, structure, and user experience. I love
               building products that feel polished, expressive, and genuinely
-              enjoyable to use.
+              enjoyable to use. For me, development is about more than writing
+              code - it’s about shaping thoughtful digital experiences from idea
+              to implementation.
             </p>
 
             <div className="button-row">
-              <a className="button-primary" href="#projects">
+              <a className="button-primary" href="#featured-projects">
                 View Projects <ArrowRight size={18} style={{ marginLeft: 8 }} />
               </a>
               <a className="button-secondary" href="#contact">

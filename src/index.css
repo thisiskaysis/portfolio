@@ -70,6 +70,7 @@ main {
 
 section {
   padding: 96px 24px;
+  scroll-margin-top: 72px;
 }
 
 .container {
@@ -384,7 +385,7 @@ section {
 
 #about {
   position: relative;
-  margin-top: -52px;
+  margin-top: -32px;
   z-index: 3;
   padding-top: 24px;
 }
