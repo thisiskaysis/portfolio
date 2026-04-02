@@ -88,7 +88,7 @@ function Hero() {
             </h1>
 
             <p className="hero-copy">
-              I’m Kaycee - an emerging full-stack developer drawn to the
+              I’m Kaycee - a full-stack developer drawn to the
               intersection of creativity, structure, and user experience.
               <br></br> I love building products that feel polished, expressive,
               and genuinely enjoyable to use. For me, development is about more
