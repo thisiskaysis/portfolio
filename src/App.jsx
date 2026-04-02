@@ -129,7 +129,7 @@ function App() {
             "Authentication",
             "Accessibility",
           ]}
-          liveUrl="#"
+          liveUrl="https://kickit-au.netlify.app/"
           githubUrl="https://github.com/SheCodesAus/Owl-gorithms-frontend"
           image="/bucketlist-preview.png"
           imageAlt="Collaborative Bucket List App preview"
